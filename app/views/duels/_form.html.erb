@@ -1,0 +1,18 @@
+<%= render 'layouts/errors', object: @duel %>
+
+
+<%= bootstrap_form_for @duel, remote: true do |f| %>
+  <%= f.text_field :name %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.text_field :character_one_name %>
+      <%= f.file_field :character_one_avatar %>
+      <%= f.text_field :character_one_body %>
+    </div>
+    <div class="col-md-6">
+      <%= f.text_field :character_two_name %>
+      <%= f.file_field :character_two_avatar %>
+      <%= f.text_field :character_two_body %>
+    </div>
+  </div>
+<% end %>

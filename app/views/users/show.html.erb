@@ -1,0 +1,6 @@
+<h1 class="page-header text-center">
+  Profile for <strong><%= @user.name %></strong>
+</h1>
+<% if current_user == @user %>
+<%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-block btn-default" %>
+<% end %>

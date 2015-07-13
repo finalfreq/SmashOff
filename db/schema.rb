@@ -11,22 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713181423) do
+ActiveRecord::Schema.define(version: 20150713185930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "characters", force: :cascade do |t|
-    t.string   "name"
-    t.string   "body"
-    t.integer  "duel_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-  end
 
   create_table "comments", force: :cascade do |t|
     t.string   "body"
@@ -41,22 +29,35 @@ ActiveRecord::Schema.define(version: 20150713181423) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "character_one_name"
+    t.string   "character_two_name"
+    t.string   "character_one_body"
+    t.string   "character_two_body"
+    t.string   "character_one_avatar_file_name"
+    t.string   "character_one_avatar_content_type"
+    t.integer  "character_one_avatar_file_size"
+    t.datetime "character_one_avatar_updated_at"
+    t.string   "character_two_avatar_file_name"
+    t.string   "character_two_avatar_content_type"
+    t.integer  "character_two_avatar_file_size"
+    t.datetime "character_two_avatar_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "name"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
