@@ -18,7 +18,6 @@ class DuelsController < ApplicationController
   end
 
   def update
-
     if @duel.update(duels_params)
       redirect_to root_path, notice: "awesome sauce"
     else

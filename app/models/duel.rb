@@ -23,6 +23,13 @@ class Duel < ActiveRecord::Base
 
   def total_votes
     character_two_votes + character_one_votes
+  end
+
+  def vote_percent_one
+    character_one_votes.to_f / total_votes.to_f * 100
+  end
+  def vote_percent_two
+    character_two_votes.to_f / total_votes.to_f * 100
 
   end
 
