@@ -1,20 +1,20 @@
 class DuelsController < ApplicationController
   load_and_authorize_resource param_method: :duels_params
   def new
-    
   end
 
   def show
   end
 
   def index
+    sleep 1
   end
 
   def create
-    if @duel.save
-      redirect_to duel_path(@duel)
-    else
-      redirect_to :back
+    @duel = Duel.create(duels_params)
+    respond_to do |format|
+      format.html { redirect_to duels_url}
+      format.js
     end
   end
 

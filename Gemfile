@@ -14,6 +14,7 @@ gem 'pry'
 gem 'bcrypt'
 gem 'devise'
 gem 'paperclip'
+gem 'jquery-turbolinks'
 
 group :development do
   gem 'byebug'
