@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 20150713222351) do
     t.string   "character_two_avatar_content_type"
     t.integer  "character_two_avatar_file_size"
     t.datetime "character_two_avatar_updated_at"
-    t.integer  "character_one_vote",                default: 0
-    t.integer  "character_two_vote",                default: 0
+    t.integer  "character_one_votes",               default: 0
+    t.integer  "character_two_votes",               default: 0
   end
 
   create_table "users", force: :cascade do |t|

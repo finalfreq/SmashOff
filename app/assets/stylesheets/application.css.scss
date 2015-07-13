@@ -33,6 +33,11 @@
   text-align: center;
 }
 
+.photo:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 .right {
   float: right;
   margin-right: 2%;
