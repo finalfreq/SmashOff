@@ -1,1 +1,29 @@
-<h1>lalala</h1>
+
+
+<%= link_to 'Add New Smash', new_duel_path, id:'new-duel', remote: true %>
+
+<% if @duels.any? %>
+  <% @duels.each do |duel| %>
+    <div class="row panel">
+      <div class="col-md-7 voting">
+        <%= duel.name %>
+        <div class="row">
+          <div class="photo">
+            <%= duel.character_one_name %><br>
+            <%= image_tag duel.character_one_image(:medium) %><br>
+            <%= duel.character_one_body %>
+          </div>
+          <div class="photo right">
+
+            <%= duel.character_two_name %><br>
+            <%= image_tag duel.character_two_image(:medium) %><br>
+            <%= duel.character_two_body %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+ Nothing is currently being smashed, create smash <%= link_to 'here!', new_duel_path %>
+
+<% end %>

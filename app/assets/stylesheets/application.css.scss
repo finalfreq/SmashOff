@@ -25,3 +25,24 @@
 
  // And finally bootswatch style itself
  @import "bootswatch/superhero/bootswatch";
+
+
+.photo {
+  padding: 1px 0 5px 0;
+  float: left;
+  text-align: center;
+}
+
+.right {
+  float: right;
+  margin-right: 2%;
+}
+
+.voting {
+  border-right: 2px solid black;
+  margin-left: 2%;
+}
+
+#new-duel {
+  margin-bottom: 1%;
+}
