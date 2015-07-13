@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rrrather</title>
+  <title>Dueler</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
 
-<%= yield %>
+<%= render 'layouts/navbar' %>
+
+<% if flash[:notice] %>
+  <div class="alert alert-dismisable alert-success text-center" role="alert" style="margin-bottom: 0px;">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+<% if flash[:alert] %>
+  <div class="alert alert-dismisable alert-danger text-center" role="alert" style="margin-bottom: 0px;">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
