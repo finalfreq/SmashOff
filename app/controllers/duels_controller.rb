@@ -7,20 +7,18 @@ class DuelsController < ApplicationController
   end
 
   def index
-    sleep 1
   end
 
   def create
-    @duel = Duel.create(duels_params)
-    respond_to do |format|
-      format.html { redirect_to duels_url}
-      format.js
+    if @duel.save
+      redirect_to root_path
+    else
+      render :new
     end
   end
 
   private def duels_params
     params.require(:duel).permit(:name, :character_one_name, :character_two_name, :character_one_body,
      :character_two_body, :character_one_avatar, :character_two_avatar)
-
   end
 end
