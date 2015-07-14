@@ -29,9 +29,17 @@ class DuelsController < ApplicationController
 
   def update
     if @duel.update(duels_params)
-      redirect_to root_path, notice: "awesome sauce"
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js { render 'percent-bar' }
+        flash[:notice] = "awesome sauce"
+      end
     else
-      render :back, alert: 'yar their bee some issues'
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js { render 'fail'}
+        flash[:alert] = 'yar their bee some issues'
+      end
     end
   end
 

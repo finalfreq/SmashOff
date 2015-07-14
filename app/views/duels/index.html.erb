@@ -5,11 +5,11 @@
 <% if @duels.any? %>
   <% @duels.each do |duel| %>
     <div class="row panel duel-content">
-      <div class="col-md-6 voting">
+      <div class="col-md-6 voting" id="duel-box<%= duel.id %>">
         <h3 class="text-center"><%= duel.name %></h3>
         <div class="row">
           <div id="duel<%= duel.id %>_1" class="photo">
-            <%= bootstrap_form_for duel do |f| %>
+            <%= bootstrap_form_for duel, remote: true do |f| %>
               <%= f.hidden_field :character_one_votes, value: duel.character_one_votes += 1 %>
               <%= duel.character_one_name %> - <%= duel.character_one_votes %><br>
               <%= image_tag duel.character_one_image(:medium) %><br>
@@ -17,7 +17,7 @@
             <% end %>
           </div>
           <div id="duel<%= duel.id %>_2" class="photo right">
-            <%= bootstrap_form_for duel do |f| %>
+            <%= bootstrap_form_for duel, remote: true do |f| %>
               <%= f.hidden_field :character_two_votes, value: duel.character_two_votes += 1 %>
               <%= duel.character_two_name %> - <%= duel.character_two_votes %><br>
               <%= image_tag duel.character_two_image(:medium) %><br>
@@ -26,7 +26,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="progress">
+          <div class="progress" id='progress-bar<%= duel.id %>'>
             <div class="progress-bar progress-bar-success" role="progressbar" style="width:<%= duel.vote_percent_one %>%">
               <%= duel.character_one_name %> - <%= duel.vote_percent_one.round(1) %>%
             </div>

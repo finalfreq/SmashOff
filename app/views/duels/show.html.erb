@@ -1,1 +1,18 @@
-<%= image_tag @duel.character_one_image(:medium), class: 'img-responsive' %>
+<div class='col-md-3'>
+  <%= image_tag @duel.character_one_image(:medium), class: 'img-responsive' %>
+</div>
+
+<div class='col-md-3'>
+  <%= image_tag @duel.character_two_image(:medium), class: 'img-responsive' %>
+</div>
+<div class="col-md-6">
+  <% if @duel.comments.any? %>
+    <% @duel.comments.each do |comment| %>
+      <div class="row comments">
+        <span class="comment"><%= comment.body %></span><span class="comment-time"><%= time_ago_in_words(comment.created_at) %> ago</span>
+      </div>
+
+    <% end %>
+
+  <% end %>
+</div>
