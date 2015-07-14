@@ -6,7 +6,6 @@ describe 'Adding a Comment on the index' do
     login_as(user, :scope => :user)
     duel = FactoryGirl.create(:duel)
     visit '/'
-    save_and_open_page
     fill_in 'Body', with: "yay"
     expect(page).to have_content("yay")
   end

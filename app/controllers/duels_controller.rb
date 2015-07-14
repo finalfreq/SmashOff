@@ -13,9 +13,9 @@ class DuelsController < ApplicationController
 
   def create
     if @duel.save
-      redirect_to root_path
+      redirect_to root_path, notice: "Successfully added duel"
     else
-      render :new
+      render :new, alert: "error in saving duel"
     end
   end
 

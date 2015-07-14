@@ -10,18 +10,18 @@
         <div class="row">
           <div id="duel<%= duel.id %>_1" class="photo">
             <%= bootstrap_form_for duel do |f| %>
-            <%= f.hidden_field :character_one_votes, value: duel.character_one_votes += 1 %>
-            <%= duel.character_one_name %> - <%= duel.character_one_votes %><br>
-            <%= image_tag duel.character_one_image(:medium) %><br>
-            <%= duel.character_one_body %>
+              <%= f.hidden_field :character_one_votes, value: duel.character_one_votes += 1 %>
+              <%= duel.character_one_name %> - <%= duel.character_one_votes %><br>
+              <%= image_tag duel.character_one_image(:medium) %><br>
+              <%= duel.character_one_body %>
             <% end %>
           </div>
           <div id="duel<%= duel.id %>_2" class="photo right">
             <%= bootstrap_form_for duel do |f| %>
-            <%= f.hidden_field :character_two_votes, value: duel.character_two_votes += 1 %>
-            <%= duel.character_two_name %> - <%= duel.character_two_votes %><br>
-            <%= image_tag duel.character_two_image(:medium) %><br>
-            <%= duel.character_two_body %>
+              <%= f.hidden_field :character_two_votes, value: duel.character_two_votes += 1 %>
+              <%= duel.character_two_name %> - <%= duel.character_two_votes %><br>
+              <%= image_tag duel.character_two_image(:medium) %><br>
+              <%= duel.character_two_body %>
             <% end %>
           </div>
         </div>
