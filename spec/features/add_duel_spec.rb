@@ -11,7 +11,6 @@ describe 'add duel path' do
     fill_in 'Character two name', with: "test 2"
     fill_in 'Character one body', with: "test 3"
     fill_in 'Character two body', with: "test 4"
-    save_and_open_page
     click_on "Smash!"
     expect(page).to have_content "Successfully"
   end

@@ -17,7 +17,6 @@ describe 'Adding a Comment on the index' do
     duel = FactoryGirl.create(:duel)
     visit '/'
     click_on "Smash!"
-    save_and_open_screenshot
     expect(page).to have_content "errors"
   end
 end
