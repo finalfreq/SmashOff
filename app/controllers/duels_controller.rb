@@ -15,7 +15,7 @@ class DuelsController < ApplicationController
   end
 
   def index
-    @comment = Comment.new
+    @comment = Comment.new(body: '')
     @duel = Duel.new
   end
 
@@ -23,7 +23,7 @@ class DuelsController < ApplicationController
     if @duel.save
       redirect_to root_path, notice: "Successfully added duel"
     else
-      render :new, alert: "error in saving duel"
+      render :new
     end
   end
 

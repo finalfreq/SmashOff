@@ -20,9 +20,11 @@ class CommentsController < ApplicationController
         format.js
       end
     else
-      render :root_path
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js { render 'fail'}
+      end
     end
-
   end
 
   def edit
