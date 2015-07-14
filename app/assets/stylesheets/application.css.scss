@@ -44,10 +44,30 @@
 }
 
 .voting {
-  border-right: 2px solid black;
-  margin-left: 2%;
+  margin-left: 1%;;
+  border-right: 1px solid grey;
+  padding: 2%;
 }
 
 #new-duel {
   margin-bottom: 1%;
+}
+
+.comments {
+  padding: 5%;
+  margin: 1%;
+  border-bottom: 1px solid grey
+}
+
+.comment {
+  float: left;
+}
+
+.comment-time {
+  float: right;
+}
+
+.center {
+    margin: auto;
+    width: 90%;
 }
