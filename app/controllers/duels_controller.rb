@@ -6,6 +6,14 @@ class DuelsController < ApplicationController
   def show
   end
 
+  def destroy
+    if @duel.destroy
+      redirect_to root_path, notice: "Successfully deleted duel"
+    else
+      render :root_path, alert: "error in deleting duel"
+    end
+  end
+
   def index
     @comment = Comment.new
     @duel = Duel.new
