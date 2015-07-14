@@ -15,9 +15,12 @@ class CommentsController < ApplicationController
     @comment = @duel.comments.new(comment_params)
     if @comment.save
       current_user.comments.push(@comment)
-      redirect_to root_path
+      respond_to do |format|
+        format.html {redirect_to root_path}
+        format.js
+      end
     else
-      redirect_to root_path
+      render :root_path
     end
 
   end

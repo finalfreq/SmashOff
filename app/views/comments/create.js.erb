@@ -1,0 +1,2 @@
+alert("ello");
+$('#comment-holder<%= @duel.id %>').prepend('<div class="row comments"> <span class="comment"><%= @comment.body %></span><span class="comment-time"><%= time_ago_in_words(@comment.created_at) %> ago</span></div>');

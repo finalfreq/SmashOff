@@ -37,14 +37,14 @@
         </div>
       </div>
       <div class="col-md-5 border">
-        <div class="center">
           <%= render 'comments/form', duel: duel %>
+          <div class="comment-holder" id="comment-holder<%= duel.id %>">
           <% duel.comments.take(3).each do |comment| %>
             <div class="row comments">
               <span class="comment"><%= comment.body %></span><span class="comment-time"><%= time_ago_in_words(comment.created_at) %> ago</span>
             </div>
           <% end %>
-        </div>
+          </div>
       </div>
     </div>
   <% end %>
