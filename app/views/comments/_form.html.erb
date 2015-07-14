@@ -1,0 +1,7 @@
+<%= render 'layouts/errors', object: @comment %>
+
+
+<%= bootstrap_form_for [@comment ] do |f| %>
+  <%= f.text_area :body %>
+  <%= f.submit "Smash!", data: {disable_with: 'Smashing...'}, class: "btn btn-block btn-primary"%>
+<% end %>

@@ -7,6 +7,8 @@ class DuelsController < ApplicationController
   end
 
   def index
+    @comment = Comment.new
+    @duel = Duel.new
   end
 
   def create
